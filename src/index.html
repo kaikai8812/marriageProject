@@ -9,20 +9,129 @@
   <meta property="og:description" content="結婚式のご招待">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kaikai8812.github.io/marriageProject/">
-  <!-- OGP画像（設定する場合はコメントを外す） -->
-  <!-- <meta property="og:image" content="https://kaikai8812.github.io/marriageProject/images/ogp.jpg"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- ===== ヒーロー ===== -->
   <section id="hero">
-    <h1>Coming Soon</h1>
-    <p>準備中です</p>
+    <p class="hero-label">Wedding Invitation</p>
+    <div class="hero-names">
+      <span class="name">太郎</span>
+      <span class="amp">&amp;</span>
+      <span class="name">花子</span>
+    </div>
+    <p class="hero-date">2026.11.22 Sun</p>
+    <div class="scroll-indicator">
+      <span></span>
+    </div>
   </section>
 
-  <!-- ===== ここにセクションを追加していく ===== -->
-  <!-- 例: 挨拶、ギャラリー、式場案内、出欠確認 など -->
+  <!-- ===== 挨拶 ===== -->
+  <section id="greeting">
+    <h2 class="section-title">Greeting</h2>
+    <div class="greeting-text">
+      <p>
+        謹啓　皆様におかれましては<br>
+        ますますご清祥のこととお慶び申し上げます
+      </p>
+      <p>
+        このたび 私たちは結婚式を挙げることとなりました<br>
+        つきましては 日頃お世話になっている皆様に<br>
+        感謝の気持ちを込めて<br>
+        ささやかな小宴を催したいと存じます
+      </p>
+      <p>
+        ご多用中 誠に恐縮ではございますが<br>
+        ぜひご出席賜りますようお願い申し上げます
+      </p>
+      <p class="greeting-sign">敬白</p>
+    </div>
+  </section>
+
+  <!-- ===== フォト ===== -->
+  <section id="photo">
+    <div class="photo-frame">
+      <div class="photo-placeholder">
+        <p>Photo</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== プロフィール ===== -->
+  <section id="profile">
+    <h2 class="section-title">Profile</h2>
+    <div class="profile-cards">
+      <div class="profile-card">
+        <div class="profile-photo-placeholder"></div>
+        <h3>新郎 太郎</h3>
+        <p class="profile-date">1995年1月1日生まれ</p>
+        <p class="profile-desc">ここに自己紹介文が入ります。趣味や仕事のこと、お相手への一言など。</p>
+      </div>
+      <div class="profile-card">
+        <div class="profile-photo-placeholder"></div>
+        <h3>新婦 花子</h3>
+        <p class="profile-date">1996年2月14日生まれ</p>
+        <p class="profile-desc">ここに自己紹介文が入ります。趣味や仕事のこと、お相手への一言など。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 式場案内 ===== -->
+  <section id="venue">
+    <h2 class="section-title">Venue</h2>
+    <div class="venue-info">
+      <h3 class="venue-name">○○ホテル ○○の間</h3>
+      <p class="venue-address">〒100-0001 東京都千代田区千代田1-1-1</p>
+      <div class="venue-detail">
+        <div class="venue-row">
+          <span class="venue-label">挙式</span>
+          <span>14:00〜</span>
+        </div>
+        <div class="venue-row">
+          <span class="venue-label">披露宴</span>
+          <span>15:00〜</span>
+        </div>
+      </div>
+      <div class="venue-map">
+        <div class="map-placeholder">
+          <p>Google Map</p>
+        </div>
+      </div>
+      <p class="venue-note">※ お車でお越しの際は、ホテル併設の駐車場をご利用ください</p>
+    </div>
+  </section>
+
+  <!-- ===== カウントダウン ===== -->
+  <section id="countdown">
+    <h2 class="section-title">Countdown</h2>
+    <div class="countdown-timer" id="countdown-timer">
+      <div class="countdown-item">
+        <span class="countdown-number" id="days">---</span>
+        <span class="countdown-unit">Days</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number" id="hours">--</span>
+        <span class="countdown-unit">Hours</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number" id="minutes">--</span>
+        <span class="countdown-unit">Min</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number" id="seconds">--</span>
+        <span class="countdown-unit">Sec</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== フッター ===== -->
+  <footer id="footer">
+    <p>Thank you</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

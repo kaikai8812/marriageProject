@@ -10,8 +10,8 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  color: #333;
+  font-family: "Noto Sans JP", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+  color: #4a4a4a;
   background-color: #faf9f6;
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
@@ -23,41 +23,338 @@ img {
   display: block;
 }
 
+section {
+  padding: 4rem 1.5rem;
+}
+
+.section-title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-size: 1.6rem;
+  letter-spacing: 0.15em;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #7c6a56;
+}
+
 /* ===== ヒーロー ===== */
 #hero {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 2rem;
+  background: linear-gradient(180deg, #f5f0eb 0%, #faf9f6 100%);
+  position: relative;
 }
 
-#hero h1 {
+.hero-label {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  color: #b0a090;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.hero-names {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-names .name {
+  font-family: "Noto Serif JP", serif;
   font-size: 2rem;
   font-weight: 300;
-  letter-spacing: 0.1em;
-  margin-bottom: 1rem;
+  letter-spacing: 0.15em;
+  color: #5a4a3a;
 }
 
-#hero p {
+.hero-names .amp {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.4rem;
+  color: #c4b5a5;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.hero-date {
+  font-family: "Cormorant Garamond", serif;
   font-size: 1rem;
-  color: #888;
+  letter-spacing: 0.2em;
+  color: #a09080;
+  font-weight: 300;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+}
+
+.scroll-indicator span {
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: #c4b5a5;
+  animation: scroll-line 1.8s ease-in-out infinite;
+}
+
+@keyframes scroll-line {
+  0% { opacity: 0; transform: scaleY(0); transform-origin: top; }
+  50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+  51% { transform-origin: bottom; }
+  100% { opacity: 0; transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ===== 挨拶 ===== */
+#greeting {
+  background-color: #fff;
+  text-align: center;
+}
+
+.greeting-text p {
+  font-family: "Noto Serif JP", serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 2.2;
+  margin-bottom: 1.5rem;
+  color: #5a5a5a;
+}
+
+.greeting-sign {
+  margin-top: 1rem;
+  color: #999;
+}
+
+/* ===== フォト ===== */
+#photo {
+  padding: 2rem 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.photo-frame {
+  width: 100%;
+  max-width: 400px;
+}
+
+.photo-placeholder {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background-color: #ede8e2;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #b0a090;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+}
+
+/* ===== プロフィール ===== */
+#profile {
+  background-color: #fff;
+}
+
+.profile-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.profile-card {
+  text-align: center;
+}
+
+.profile-photo-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #ede8e2;
+  margin: 0 auto 1rem;
+}
+
+.profile-card h3 {
+  font-family: "Noto Serif JP", serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #5a4a3a;
+  margin-bottom: 0.3rem;
+}
+
+.profile-date {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-bottom: 0.8rem;
+}
+
+.profile-desc {
+  font-size: 0.85rem;
+  color: #777;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/* ===== 式場案内 ===== */
+#venue {
+  text-align: center;
+}
+
+.venue-name {
+  font-family: "Noto Serif JP", serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #5a4a3a;
+  margin-bottom: 0.5rem;
+}
+
+.venue-address {
+  font-size: 0.8rem;
+  color: #999;
+  margin-bottom: 1.5rem;
+}
+
+.venue-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.venue-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.venue-label {
+  background-color: #ede8e2;
+  padding: 0.2rem 0.8rem;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  color: #7c6a56;
+}
+
+.venue-map {
+  margin: 0 auto 1.5rem;
+  max-width: 500px;
+}
+
+.map-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #ede8e2;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #b0a090;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+}
+
+.venue-note {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+/* ===== カウントダウン ===== */
+#countdown {
+  background-color: #fff;
+  text-align: center;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-number {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: #5a4a3a;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+  min-width: 3ch;
+}
+
+.countdown-unit {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: #b0a090;
+  text-transform: uppercase;
+}
+
+/* ===== フッター ===== */
+#footer {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+#footer p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  color: #c4b5a5;
+  font-weight: 300;
 }
 
 /* ===== レスポンシブ ===== */
 
-/* タブレット以上 */
 @media (min-width: 768px) {
-  #hero h1 {
+  section {
+    padding: 5rem 2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+  }
+
+  .hero-names .name {
+    font-size: 2.8rem;
+  }
+
+  .hero-date {
+    font-size: 1.1rem;
+  }
+
+  .profile-cards {
+    flex-direction: row;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 700px;
+  }
+
+  .countdown-number {
     font-size: 3rem;
+  }
+
+  .countdown-timer {
+    gap: 3rem;
   }
 }
 
-/* デスクトップ以上 */
 @media (min-width: 1024px) {
-  #hero h1 {
-    font-size: 3.5rem;
+  .hero-names .name {
+    font-size: 3.2rem;
   }
 }
