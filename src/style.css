@@ -1,5 +1,7 @@
 /* ===== リセット・共通 ===== */
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,12 +9,13 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  font-family: "Noto Sans JP", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
   color: #4a4a4a;
-  background-color: #faf9f6;
+  background-color: #e8e4df;
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
 }
@@ -23,338 +26,452 @@ img {
   display: block;
 }
 
-section {
-  padding: 4rem 1.5rem;
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
 }
 
-.section-title {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 300;
-  font-size: 1.6rem;
-  letter-spacing: 0.15em;
-  text-align: center;
-  margin-bottom: 2.5rem;
-  color: #7c6a56;
-}
-
-/* ===== ヒーロー ===== */
-#hero {
+/* ===== ラッパー（モバイル幅に制限） ===== */
+.wrapper {
+  max-width: 430px;
+  margin: 0 auto;
+  background-color: #faf9f6;
   min-height: 100vh;
-  min-height: 100dvh;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== 共通パーツ ===== */
+section {
+  padding: 3.5rem 1.8rem;
+}
+
+.section-eng {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  text-align: center;
+  color: #b0a293;
+  margin-bottom: 2rem;
+}
+
+.divider-icon {
+  text-align: center;
+  font-size: 0.7rem;
+  color: #d4b8a0;
+  margin-bottom: 2rem;
+  letter-spacing: 0.2em;
+}
+
+/* ===== フェードインアニメーション ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== カバー ===== */
+#cover {
+  padding: 0;
+  text-align: center;
+}
+
+.cover-photo {
+  width: 100%;
+  overflow: hidden;
+}
+
+.cover-photo-placeholder {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(160deg, #e8ddd4 0%, #d9cec4 50%, #c8bdb3 100%);
+}
+
+.cover-text {
+  padding: 2.5rem 1.5rem 3rem;
+}
+
+.cover-label {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
+  color: #b0a293;
+  margin-bottom: 1.8rem;
+  font-weight: 400;
+}
+
+.cover-names {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 2rem;
-  background: linear-gradient(180deg, #f5f0eb 0%, #faf9f6 100%);
-  position: relative;
-}
-
-.hero-label {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.3em;
-  color: #b0a090;
-  margin-bottom: 2rem;
-  font-weight: 300;
-}
-
-.hero-names {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
+  gap: 0.8rem;
   margin-bottom: 1.5rem;
-}
-
-.hero-names .name {
-  font-family: "Noto Serif JP", serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 300;
-  letter-spacing: 0.15em;
-  color: #5a4a3a;
+  letter-spacing: 0.12em;
+  color: #3d3530;
 }
 
-.hero-names .amp {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.4rem;
+.cover-dot {
+  font-size: 0.6rem;
   color: #c4b5a5;
-  font-style: italic;
-  font-weight: 300;
 }
 
-.hero-date {
+.cover-date {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1rem;
-  letter-spacing: 0.2em;
-  color: #a09080;
-  font-weight: 300;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  color: #9a8d80;
+  margin-bottom: 0.3rem;
+  font-weight: 400;
 }
 
-.scroll-indicator {
-  position: absolute;
-  bottom: 2rem;
-}
-
-.scroll-indicator span {
-  display: block;
-  width: 1px;
-  height: 40px;
-  background: #c4b5a5;
-  animation: scroll-line 1.8s ease-in-out infinite;
-}
-
-@keyframes scroll-line {
-  0% { opacity: 0; transform: scaleY(0); transform-origin: top; }
-  50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
-  51% { transform-origin: bottom; }
-  100% { opacity: 0; transform: scaleY(0); transform-origin: bottom; }
+.cover-venue {
+  font-size: 0.72rem;
+  color: #aaa09a;
+  letter-spacing: 0.05em;
+  font-weight: 200;
 }
 
 /* ===== 挨拶 ===== */
 #greeting {
-  background-color: #fff;
   text-align: center;
+  background-color: #fff;
 }
 
-.greeting-text p {
-  font-family: "Noto Serif JP", serif;
-  font-size: 0.85rem;
+.greeting-body {
+  margin-bottom: 2.5rem;
+}
+
+.greeting-body p {
+  font-size: 0.82rem;
   font-weight: 300;
   line-height: 2.2;
-  margin-bottom: 1.5rem;
-  color: #5a5a5a;
+  color: #5a5550;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.02em;
 }
 
-.greeting-sign {
-  margin-top: 1rem;
-  color: #999;
+.couple-parents p {
+  font-size: 0.78rem;
+  color: #8a8580;
+  line-height: 2;
+  font-weight: 300;
 }
 
-/* ===== フォト ===== */
-#photo {
-  padding: 2rem 1.5rem;
-  display: flex;
-  justify-content: center;
+.couple-parents strong {
+  font-weight: 400;
+  color: #4a4540;
 }
 
-.photo-frame {
-  width: 100%;
-  max-width: 400px;
+.parent-name {
+  font-size: 0.72rem;
+  color: #aaa5a0;
 }
 
-.photo-placeholder {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  background-color: #ede8e2;
-  border-radius: 4px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #b0a090;
+/* ===== カレンダー ===== */
+#calendar {
+  text-align: center;
+}
+
+.calendar-date-text {
+  font-size: 0.82rem;
+  color: #7a756f;
+  margin-bottom: 1.8rem;
+  font-weight: 300;
+}
+
+.mini-calendar {
+  max-width: 300px;
+  margin: 0 auto 1.8rem;
+}
+
+.cal-header {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.2rem;
-  letter-spacing: 0.1em;
-}
-
-/* ===== プロフィール ===== */
-#profile {
-  background-color: #fff;
-}
-
-.profile-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.profile-card {
-  text-align: center;
-}
-
-.profile-photo-placeholder {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background-color: #ede8e2;
-  margin: 0 auto 1rem;
-}
-
-.profile-card h3 {
-  font-family: "Noto Serif JP", serif;
-  font-weight: 400;
-  font-size: 1.1rem;
-  color: #5a4a3a;
-  margin-bottom: 0.3rem;
-}
-
-.profile-date {
-  font-size: 0.8rem;
-  color: #aaa;
-  margin-bottom: 0.8rem;
-}
-
-.profile-desc {
   font-size: 0.85rem;
-  color: #777;
-  max-width: 280px;
-  margin: 0 auto;
+  letter-spacing: 0.15em;
+  color: #6a6560;
+  margin-bottom: 1rem;
+  font-weight: 400;
 }
 
-/* ===== 式場案内 ===== */
-#venue {
+.cal-weekdays,
+.cal-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
   text-align: center;
 }
 
-.venue-name {
-  font-family: "Noto Serif JP", serif;
-  font-weight: 400;
-  font-size: 1.1rem;
-  color: #5a4a3a;
+.cal-weekdays {
   margin-bottom: 0.5rem;
 }
 
-.venue-address {
+.cal-weekdays span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.7rem;
+  color: #aaa5a0;
+  padding: 0.3rem 0;
+  font-weight: 400;
+}
+
+.cal-days span {
+  font-size: 0.78rem;
+  padding: 0.4rem 0;
+  color: #5a5550;
+  font-weight: 300;
+}
+
+.cal-days .sun {
+  color: #d4907a;
+}
+
+.cal-days .sat {
+  color: #7a9ab5;
+}
+
+.cal-days .today {
+  position: relative;
+}
+
+/* 22日（結婚式当日）をハイライト */
+.cal-days span:nth-child(28) {
+  background-color: #d4b8a0;
+  color: #fff;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  padding: 0;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+.countdown-inline {
+  font-size: 0.82rem;
+  color: #9a958f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #eae5e0;
+  max-width: 300px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+.countdown-inline strong {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  color: #d4b8a0;
+  font-weight: 500;
+}
+
+/* ===== ギャラリー ===== */
+#gallery {
+  background-color: #fff;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.gallery-placeholder {
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #ede8e2 0%, #e0d8d0 100%);
+}
+
+/* ===== 式場案内 ===== */
+#location {
+  text-align: center;
+}
+
+.location-name {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #3d3530;
+  margin-bottom: 0.2rem;
+}
+
+.location-hall {
   font-size: 0.8rem;
-  color: #999;
+  color: #9a958f;
+  margin-bottom: 0.8rem;
+  font-weight: 300;
+}
+
+.location-address {
+  font-size: 0.75rem;
+  color: #aaa5a0;
+  margin-bottom: 0.2rem;
+  font-weight: 300;
+}
+
+.location-tel {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.75rem;
+  color: #aaa5a0;
   margin-bottom: 1.5rem;
 }
 
-.venue-detail {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: center;
-  margin-bottom: 2rem;
-  font-size: 0.9rem;
-}
-
-.venue-row {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-.venue-label {
-  background-color: #ede8e2;
-  padding: 0.2rem 0.8rem;
-  border-radius: 2px;
-  font-size: 0.8rem;
-  color: #7c6a56;
-}
-
-.venue-map {
-  margin: 0 auto 1.5rem;
-  max-width: 500px;
+.location-map {
+  margin-bottom: 1.5rem;
 }
 
 .map-placeholder {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   background-color: #ede8e2;
-  border-radius: 4px;
+  border-radius: 6px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #b0a090;
+  color: #c4b8aa;
   font-family: "Cormorant Garamond", serif;
-  font-size: 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
 }
 
-.venue-note {
+.location-access {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.access-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
   font-size: 0.75rem;
-  color: #aaa;
+  color: #7a756f;
+  font-weight: 300;
 }
 
-/* ===== カウントダウン ===== */
-#countdown {
+.access-label {
+  font-size: 0.68rem;
+  color: #fff;
+  background-color: #c4b5a5;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+  flex-shrink: 0;
+  font-weight: 400;
+}
+
+/* ===== ご祝儀 ===== */
+#account {
   background-color: #fff;
   text-align: center;
 }
 
-.countdown-timer {
+.account-desc {
+  font-size: 0.78rem;
+  color: #8a8580;
+  margin-bottom: 1.5rem;
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+.account-tabs {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 0;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ddd8d2;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
-.countdown-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.countdown-number {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2.2rem;
+.account-tab {
+  flex: 1;
+  padding: 0.6rem 0;
+  font-size: 0.78rem;
+  color: #aaa5a0;
+  background-color: transparent;
+  transition: all 0.3s ease;
   font-weight: 300;
-  color: #5a4a3a;
-  line-height: 1;
-  margin-bottom: 0.3rem;
-  min-width: 3ch;
 }
 
-.countdown-unit {
+.account-tab.active {
+  background-color: #d4b8a0;
+  color: #fff;
+  font-weight: 400;
+}
+
+.account-content.hidden {
+  display: none;
+}
+
+.account-row {
+  padding: 1rem;
+  background-color: #faf8f5;
+  border-radius: 6px;
+}
+
+.account-bank {
+  font-size: 0.72rem;
+  color: #aaa5a0;
+  margin-bottom: 0.2rem;
+}
+
+.account-number {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.95rem;
+  color: #5a5550;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.1rem;
+}
+
+.account-holder {
+  font-size: 0.78rem;
+  color: #7a756f;
+  margin-bottom: 0.6rem;
+  font-weight: 300;
+}
+
+.copy-btn {
   font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  color: #b0a090;
-  text-transform: uppercase;
+  color: #b0a293;
+  border: 1px solid #ddd8d2;
+  padding: 0.35rem 1.2rem;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.copy-btn:active {
+  background-color: #d4b8a0;
+  color: #fff;
+  border-color: #d4b8a0;
 }
 
 /* ===== フッター ===== */
 #footer {
-  padding: 3rem 1.5rem;
+  padding: 3rem 1.5rem 4rem;
   text-align: center;
+  background-color: #f0ece7;
 }
 
-#footer p {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1rem;
-  letter-spacing: 0.2em;
-  color: #c4b5a5;
+.footer-names {
+  font-size: 0.85rem;
+  color: #7a756f;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
   font-weight: 300;
 }
 
-/* ===== レスポンシブ ===== */
-
-@media (min-width: 768px) {
-  section {
-    padding: 5rem 2rem;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 3rem;
-  }
-
-  .hero-names .name {
-    font-size: 2.8rem;
-  }
-
-  .hero-date {
-    font-size: 1.1rem;
-  }
-
-  .profile-cards {
-    flex-direction: row;
-    justify-content: center;
-    gap: 4rem;
-    max-width: 700px;
-  }
-
-  .countdown-number {
-    font-size: 3rem;
-  }
-
-  .countdown-timer {
-    gap: 3rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-names .name {
-    font-size: 3.2rem;
-  }
+.footer-date {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.75rem;
+  color: #b0a293;
+  letter-spacing: 0.15em;
 }

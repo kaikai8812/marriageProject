@@ -1,57 +1,72 @@
-// ===== カウントダウンタイマー =====
+// ===== カウントダウン（D-day） =====
 (function () {
-  // 結婚式の日時（変更する場合はここを編集）
   var weddingDate = new Date('2026-11-22T14:00:00+09:00');
 
-  function updateCountdown() {
+  function updateDday() {
     var now = new Date();
     var diff = weddingDate - now;
-
-    if (diff <= 0) {
-      document.getElementById('days').textContent = '0';
-      document.getElementById('hours').textContent = '0';
-      document.getElementById('minutes').textContent = '0';
-      document.getElementById('seconds').textContent = '0';
-      return;
+    var days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+    var el = document.getElementById('d-day');
+    if (el) {
+      el.textContent = days > 0 ? days : 'D-Day';
     }
-
-    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    document.getElementById('days').textContent = days;
-    document.getElementById('hours').textContent = hours;
-    document.getElementById('minutes').textContent = minutes;
-    document.getElementById('seconds').textContent = seconds;
   }
 
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+  updateDday();
 })();
 
 // ===== スクロールフェードイン =====
 (function () {
-  var sections = document.querySelectorAll('section:not(#hero)');
-
-  // 初期状態: 非表示
-  sections.forEach(function (section) {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(20px)';
-    section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-  });
+  var targets = document.querySelectorAll('.fade-in');
 
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
+        entry.target.classList.add('visible');
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.12 });
 
-  sections.forEach(function (section) {
-    observer.observe(section);
+  targets.forEach(function (el) {
+    observer.observe(el);
+  });
+})();
+
+// ===== ご祝儀タブ切り替え =====
+(function () {
+  var tabs = document.querySelectorAll('.account-tab');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      // タブのアクティブ切り替え
+      tabs.forEach(function (t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+
+      // コンテンツの表示切り替え
+      var targetId = tab.getAttribute('data-target');
+      document.querySelectorAll('.account-content').forEach(function (c) {
+        c.classList.add('hidden');
+      });
+      var target = document.getElementById(targetId);
+      if (target) {
+        target.classList.remove('hidden');
+      }
+    });
+  });
+})();
+
+// ===== 口座番号コピー =====
+(function () {
+  document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy');
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(function () {
+          var original = btn.textContent;
+          btn.textContent = 'コピーしました';
+          setTimeout(function () { btn.textContent = original; }, 1500);
+        });
+      }
+    });
   });
 })();
