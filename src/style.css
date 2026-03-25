@@ -1,31 +1,63 @@
+/* ===== リセット・共通 ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  color: #333;
+  background-color: #faf9f6;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== ヒーロー ===== */
+#hero {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #faf9f6;
-  color: #333;
-}
-
-main {
   text-align: center;
+  padding: 2rem;
 }
 
-h1 {
+#hero h1 {
   font-size: 2rem;
   font-weight: 300;
   letter-spacing: 0.1em;
   margin-bottom: 1rem;
 }
 
-p {
+#hero p {
   font-size: 1rem;
   color: #888;
+}
+
+/* ===== レスポンシブ ===== */
+
+/* タブレット以上 */
+@media (min-width: 768px) {
+  #hero h1 {
+    font-size: 3rem;
+  }
+}
+
+/* デスクトップ以上 */
+@media (min-width: 1024px) {
+  #hero h1 {
+    font-size: 3.5rem;
+  }
 }
