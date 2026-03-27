@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Wedding Invitation</title>
-  <meta name="description" content="結婚式のご招待">
+  <meta name="description" content="결혼식에 초대합니다">
   <meta property="og:title" content="Wedding Invitation">
-  <meta property="og:description" content="結婚式のご招待">
+  <meta property="og:description" content="결혼식에 초대합니다">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kaikai8812.github.io/marriageProject/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Corben:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,13 +21,18 @@
     <section id="cover">
       <div class="cover-photo">
         <div class="cover-photo-placeholder"></div>
+        <div class="cover-date-overlay">
+          <span>26</span>
+          <span>05</span>
+          <span>01</span>
+        </div>
       </div>
       <div class="cover-text">
-        <p class="cover-label">WEDDING INVITATION</p>
+        <p class="cover-label">INVITATION</p>
         <div class="cover-names">
-          <span>太郎</span>
+          <span>카이</span>
           <span class="cover-dot">·</span>
-          <span>花子</span>
+          <span>지유</span>
         </div>
         <p class="cover-date">2026. 11. 22 SUN PM 2:00</p>
         <p class="cover-venue">○○ホテル ○○の間</p>
@@ -50,15 +55,15 @@
         </p>
       </div>
       <div class="couple-parents">
-        <p><span class="parent-name">○○ · ○○</span>의 장남 <strong>太郎</strong></p>
-        <p><span class="parent-name">○○ · ○○</span>의 장녀 <strong>花子</strong></p>
+        <p><span class="parent-name">○○ · ○○</span>의 장남 <strong>카이</strong></p>
+        <p><span class="parent-name">○○ · ○○</span>의 장녀 <strong>지유</strong></p>
       </div>
     </section>
 
     <!-- ===== カレンダー ===== -->
     <section id="calendar" class="fade-in">
       <h2 class="section-eng">WEDDING DAY</h2>
-      <p class="calendar-date-text">2026年 11月 22日 日曜日 午後2時</p>
+      <p class="calendar-date-text">2026년 11월 22일 일요일 오후 2시</p>
       <div class="mini-calendar">
         <div class="cal-header">
           <span>November 2026</span>
@@ -76,9 +81,9 @@
         </div>
       </div>
       <div class="countdown-inline">
-        <span>結婚式まで</span>
+        <span>결혼식까지</span>
         <strong id="d-day">---</strong>
-        <span>日</span>
+        <span>일</span>
       </div>
     </section>
 
@@ -98,10 +103,10 @@
     <!-- ===== 式場案内 ===== -->
     <section id="location" class="fade-in">
       <h2 class="section-eng">LOCATION</h2>
-      <h3 class="location-name">○○ホテル</h3>
-      <p class="location-hall">○○の間</p>
-      <p class="location-address">東京都千代田区千代田1-1-1</p>
-      <p class="location-tel">TEL. 03-0000-0000</p>
+      <h3 class="location-name">○○호텔</h3>
+      <p class="location-hall">○○홀</p>
+      <p class="location-address">서울특별시 ○○구 ○○로 1-1-1</p>
+      <p class="location-tel">TEL. 02-0000-0000</p>
       <div class="location-map">
         <div class="map-placeholder">
           <p>Map</p>
@@ -109,16 +114,16 @@
       </div>
       <div class="location-access">
         <div class="access-item">
-          <span class="access-label">地下鉄</span>
-          <span>○○駅 3番出口 徒歩5分</span>
+          <span class="access-label">지하철</span>
+          <span>○○역 3번 출구 도보 5분</span>
         </div>
         <div class="access-item">
-          <span class="access-label">バス</span>
-          <span>○○バス停 下車 徒歩3分</span>
+          <span class="access-label">버스</span>
+          <span>○○정류장 하차 도보 3분</span>
         </div>
         <div class="access-item">
-          <span class="access-label">お車</span>
-          <span>ホテル併設駐車場をご利用ください</span>
+          <span class="access-label">자가용</span>
+          <span>호텔 내 주차장을 이용해 주세요</span>
         </div>
       </div>
     </section>
@@ -126,32 +131,32 @@
     <!-- ===== ご祝儀 ===== -->
     <section id="account" class="fade-in">
       <h2 class="section-eng">GIFT</h2>
-      <p class="account-desc">お気持ちを届けてくださる方は<br>下記の口座をご利用ください</p>
+      <p class="account-desc">마음을 전해주실 분은<br>아래 계좌를 이용해 주세요</p>
       <div class="account-tabs">
-        <button class="account-tab active" data-target="groom-account">新郎側</button>
-        <button class="account-tab" data-target="bride-account">新婦側</button>
+        <button class="account-tab active" data-target="groom-account">신랑측</button>
+        <button class="account-tab" data-target="bride-account">신부측</button>
       </div>
       <div class="account-content" id="groom-account">
         <div class="account-row">
           <p class="account-bank">○○銀行</p>
           <p class="account-number">000-0000-0000</p>
-          <p class="account-holder">山田 太郎</p>
-          <button class="copy-btn" data-copy="000-0000-0000">コピー</button>
+          <p class="account-holder">홍길동</p>
+          <button class="copy-btn" data-copy="000-0000-0000">복사</button>
         </div>
       </div>
       <div class="account-content hidden" id="bride-account">
         <div class="account-row">
           <p class="account-bank">○○銀行</p>
           <p class="account-number">000-0000-0000</p>
-          <p class="account-holder">鈴木 花子</p>
-          <button class="copy-btn" data-copy="000-0000-0000">コピー</button>
+          <p class="account-holder">김영희</p>
+          <button class="copy-btn" data-copy="000-0000-0000">복사</button>
         </div>
       </div>
     </section>
 
     <!-- ===== フッター ===== -->
     <footer id="footer">
-      <p class="footer-names">太郎 ♥ 花子</p>
+      <p class="footer-names">카이 ♥ 지유</p>
       <p class="footer-date">2026. 11. 22</p>
     </footer>
 

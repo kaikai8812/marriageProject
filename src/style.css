@@ -1,4 +1,12 @@
-/* ===== リセット・共通 ===== */
+/* ===== 폰트 ===== */
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./fonts/PretendardVariable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+/* ===== 리셋·공통 ===== */
 *,
 *::before,
 *::after {
@@ -8,15 +16,18 @@
 }
 
 html {
+  font-size: 20px;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
-  font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-family: "Pretendard", sans-serif;
   color: #4a4a4a;
   background-color: #e8e4df;
+  font-weight: 400;
   line-height: 1.8;
+  letter-spacing: -0.5px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -86,12 +97,41 @@ section {
 .cover-photo {
   width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .cover-photo-placeholder {
   width: 100%;
   aspect-ratio: 3 / 4;
-  background: linear-gradient(160deg, #e8ddd4 0%, #d9cec4 50%, #c8bdb3 100%);
+  background: url('./images/main.jpg') center center / cover no-repeat;
+}
+
+.cover-date-overlay {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cover-date-overlay span {
+  font-family: "Corben", serif;
+  font-size: 95px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.5px;
+  margin: -12px 0;
+}
+
+.cover-date-overlay span:nth-child(2) {
+  padding-left: 42px;
+}
+
+.cover-date-overlay span:nth-child(3) {
+  padding-left: 22px;
 }
 
 .cover-text {
@@ -101,10 +141,10 @@ section {
 .cover-label {
   font-family: "Cormorant Garamond", serif;
   font-size: 0.65rem;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.15em;
   color: #b0a293;
   margin-bottom: 1.8rem;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .cover-names {
