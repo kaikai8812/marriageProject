@@ -266,7 +266,7 @@ section {
 
 .cal-weekdays span {
   font-size: 0.7rem;
-  color: #aaa5a0;
+  color: rgb(61, 53, 48);
   padding: 0.3rem 0;
   font-weight: 600;
 }
