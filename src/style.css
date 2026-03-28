@@ -571,22 +571,44 @@ section {
 
 /* ===== フッター ===== */
 #footer {
-  padding: 3rem 1.5rem 4rem;
-  text-align: center;
-  background-color: #f0ece7;
+  position: relative;
+  min-height: 480px;
+  background: url('./images/main.jpg') center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.footer-names {
-  font-size: 0.85rem;
-  color: #7a756f;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.3rem;
+#footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(to bottom, #faf9f6, transparent);
+  z-index: 1;
+}
+
+#footer::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(to top, #faf9f6, transparent);
+  z-index: 1;
+}
+
+.footer-thanks {
+  position: relative;
+  z-index: 2;
+  font-family: "NanumGothicCoding", sans-serif;
+  font-size: 1rem;
   font-weight: 400;
-}
-
-.footer-date {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 0.75rem;
-  color: #b0a293;
+  color: #fff;
   letter-spacing: 0.15em;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
 }
