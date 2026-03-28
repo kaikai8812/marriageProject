@@ -191,10 +191,10 @@ section {
 }
 
 .cover-date {
-  font-size: 0.8rem;
+  font-size: 18px;
   letter-spacing: -0.03em;
   word-spacing: -0.2em;
-  color: #9a8d80;
+  color: rgb(61, 53, 48);
   margin-bottom: 0.3rem;
   font-weight: 400;
   text-align: center;
