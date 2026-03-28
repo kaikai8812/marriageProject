@@ -285,8 +285,8 @@ section {
   position: relative;
 }
 
-/* 22日（結婚式当日）をハイライト */
-.cal-days span:nth-child(28) {
+/* 1日（피로연 당일）をハイライト */
+.cal-days span:nth-child(6) {
   background-color: #d4b8a0;
   color: #fff;
   border-radius: 50%;
