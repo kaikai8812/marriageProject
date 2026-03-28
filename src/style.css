@@ -596,4 +596,5 @@ section {
   color: rgb(130, 122, 117);
   letter-spacing: 0.15em;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+  transform: translateY(-40px);
 }
