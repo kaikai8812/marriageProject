@@ -576,6 +576,7 @@ section {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-color: #fff;
 }
 
 .footer-bg {
@@ -589,7 +590,7 @@ section {
   position: absolute;
   z-index: 2;
   font-family: "NanumGothicCoding", sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
   color: #fff;
   letter-spacing: 0.15em;
