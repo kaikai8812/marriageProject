@@ -1,6 +1,6 @@
 // ===== 카운트다운 (D-day) =====
 (function () {
-  var weddingDate = new Date('2026-11-22T14:00:00+09:00');
+  var weddingDate = new Date('2026-05-01T18:30:00+09:00');
 
   function updateDday() {
     var now = new Date();
