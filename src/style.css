@@ -268,6 +268,7 @@ section {
 }
 
 .cal-days span {
+  font-family: "Pretendard", sans-serif;
   font-size: 0.78rem;
   padding: 0.4rem 0;
   color: #5a5550;
@@ -314,7 +315,7 @@ section {
 }
 
 .countdown-inline strong {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Pretendard", sans-serif;
   font-size: 1.3rem;
   color: #d4b8a0;
   font-weight: 500;
