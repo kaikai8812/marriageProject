@@ -353,6 +353,10 @@ section {
   font-weight: 400;
 }
 
+.countdown-inline span {
+  letter-spacing: 0;
+}
+
 .countdown-inline strong {
   font-family: "Pretendard", sans-serif;
   font-size: 0.9rem;
