@@ -321,14 +321,14 @@ section {
   border-top: 1px solid #eae5e0;
   max-width: 300px;
   margin: 0 auto;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .countdown-inline strong {
   font-family: "Pretendard", sans-serif;
   font-size: 1.3rem;
   color: #d4b8a0;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* ===== ギャラリー ===== */
