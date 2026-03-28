@@ -436,7 +436,7 @@ section {
 
 .location-address {
   font-size: 0.75rem;
-  color: rgb(61, 53, 48);
+  color: #999999;
   margin-bottom: 0.2rem;
   font-weight: 400;
 }
