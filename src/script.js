@@ -49,7 +49,7 @@ window.addEventListener('load', function () {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     particles.forEach(function (p) {
       ctx.globalAlpha = p.opacity;
-      ctx.fillStyle = '#ffffff';
+      ctx.fillStyle = '#ffe066';
       if (p.isStar) {
         drawStar(p.x, p.y, p.size);
       } else {
