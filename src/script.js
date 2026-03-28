@@ -1,3 +1,76 @@
+// ===== 꽃가루 파티클 애니메이션 =====
+(function () {
+  var canvas = document.getElementById('particles-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var particles = [];
+  var count = 40;
+
+  function resize() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+
+  function randomBetween(a, b) {
+    return a + Math.random() * (b - a);
+  }
+
+  function createParticle() {
+    return {
+      x: randomBetween(0, canvas.width),
+      y: randomBetween(-20, -5),
+      size: randomBetween(1.5, 3.5),
+      speedY: randomBetween(0.6, 1.4),
+      speedX: randomBetween(-0.4, 0.4),
+      opacity: randomBetween(0.4, 1),
+      isStar: Math.random() > 0.5
+    };
+  }
+
+  resize();
+  for (var i = 0; i < count; i++) {
+    var p = createParticle();
+    p.y = randomBetween(0, canvas.height);
+    particles.push(p);
+  }
+
+  function drawStar(x, y, r) {
+    ctx.beginPath();
+    for (var i = 0; i < 5; i++) {
+      var angle = (i * 4 * Math.PI) / 5 - Math.PI / 2;
+      var method = i === 0 ? 'moveTo' : 'lineTo';
+      ctx[method](x + r * Math.cos(angle), y + r * Math.sin(angle));
+    }
+    ctx.closePath();
+    ctx.fill();
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(function (p) {
+      ctx.globalAlpha = p.opacity;
+      ctx.fillStyle = '#ffffff';
+      if (p.isStar) {
+        drawStar(p.x, p.y, p.size);
+      } else {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      p.y += p.speedY;
+      p.x += p.speedX;
+      if (p.y > canvas.height + 10) {
+        Object.assign(p, createParticle());
+      }
+    });
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(animate);
+  }
+
+  window.addEventListener('resize', resize);
+  animate();
+})();
+
 // ===== 카운트다운 (D-day) =====
 (function () {
   var weddingDate = new Date('2026-05-01T18:30:00+09:00');
