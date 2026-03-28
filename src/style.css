@@ -630,14 +630,14 @@ section {
 .account-number {
   font-family: "Pretendard", sans-serif;
   font-size: 0.95rem;
-  color: #5a5550;
+  color: rgb(61, 53, 48);
   letter-spacing: 0.08em;
   margin-bottom: 0.1rem;
 }
 
 .account-holder {
   font-size: 0.78rem;
-  color: #7a756f;
+  color: rgb(61, 53, 48);
   margin-bottom: 0.6rem;
   font-weight: 400;
 }
