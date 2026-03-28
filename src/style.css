@@ -230,6 +230,10 @@ section {
   font-weight: 400;
 }
 
+.couple-parents p + p {
+  margin-top: 8px;
+}
+
 .couple-parents strong {
   font-weight: 600;
   color: #4a4540;
