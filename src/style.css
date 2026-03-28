@@ -435,7 +435,7 @@ section {
 }
 
 .location-tel a {
-  color: inherit;
+  color: #aaa5a0;
   text-decoration: none;
 }
   margin-bottom: 1.5rem;
