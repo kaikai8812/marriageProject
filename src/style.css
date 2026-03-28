@@ -225,7 +225,7 @@ section {
 
 .couple-parents p {
   font-size: 0.78rem;
-  color: #8a8580;
+  color: rgb(170, 165, 160);
   line-height: 2;
   font-weight: 600;
 }
@@ -237,7 +237,7 @@ section {
 
 .parent-name {
   font-size: 0.72rem;
-  color: #aaa5a0;
+  color: rgb(61, 53, 48);
 }
 
 /* ===== カレンダー ===== */
