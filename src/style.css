@@ -27,6 +27,8 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   background-color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -37,6 +39,8 @@ body {
   line-height: 1.8;
   letter-spacing: -0.5px;
   -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
 }
 
 img {
