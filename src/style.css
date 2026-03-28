@@ -439,18 +439,29 @@ section {
   margin-bottom: 1.5rem;
 }
 
-.map-iframe {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: 6px;
-  display: block;
+.map-nav-section {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.map-nav-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #3d3530;
+  margin-bottom: 0.4rem;
+}
+
+.map-nav-desc {
+  font-size: 13px;
+  color: #8a8580;
+  margin-bottom: 0.8rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .map-buttons {
   display: flex;
   gap: 0.5rem;
-  margin-top: 0.8rem;
-  margin-bottom: 1.5rem;
 }
 
 .map-btn {
@@ -458,32 +469,34 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
-  padding: 0.6rem 0;
-  border-radius: 8px;
-  background-color: #f5f3f0;
-  font-size: 0.72rem;
-  color: #5a5550;
+  gap: 6px;
+  padding: 0.7rem 0;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  border: 1px solid #e8e8e8;
+  font-size: 12px;
+  color: #3d3530;
   font-weight: 400;
   text-decoration: none;
   font-family: "NanumGothicCoding", sans-serif;
 }
 
 .map-btn-icon {
-  font-size: 0.65rem;
+  font-size: 11px;
   font-weight: 700;
-  width: 18px;
-  height: 18px;
-  border-radius: 4px;
-  display: flex;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   color: #fff;
+  flex-shrink: 0;
 }
 
 .naver-icon { background-color: #03C75A; }
 .tmap-icon  { background-color: #FF4785; }
-.google-icon { background-color: #4285F4; }
+.kakao-icon { background-color: transparent; font-size: 16px; }
 
 .location-access {
   text-align: left;

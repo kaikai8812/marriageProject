@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Corben:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
   <div class="wrapper">
@@ -109,24 +109,20 @@
       <h3 class="location-name">그랜드 머큐어 앰배서더 창원, 2층</h3>
       <p class="location-address">경남 창원시 성산구 원이대로 332</p>
       <p class="location-tel">TEL. 055-600-0700</p>
-      <div class="location-map">
-        <iframe
-          class="map-iframe"
-          src="https://map.kakao.com/link/map/그랜드머큐어앰배서더창원,35.226012,128.681234"
-          frameborder="0"
-          allowfullscreen>
-        </iframe>
-      </div>
-      <div class="map-buttons">
-        <a class="map-btn" href="https://map.naver.com/p/search/그랜드%20머큐어%20앰배서더%20창원" target="_blank">
-          <span class="map-btn-icon naver-icon">N</span>네이버
-        </a>
-        <a class="map-btn" href="https://tmap.life/search?query=그랜드머큐어앰배서더창원" target="_blank">
-          <span class="map-btn-icon tmap-icon">T</span>T MAP
-        </a>
-        <a class="map-btn" href="https://maps.google.com/?q=그랜드+머큐어+앰배서더+창원" target="_blank">
-          <span class="map-btn-icon google-icon">G</span>구글맵
-        </a>
+      <div class="map-nav-section">
+        <p class="map-nav-title">내비게이션</p>
+        <p class="map-nav-desc">원하시는 앱을 선택하시면 길안내가 시작됩니다.</p>
+        <div class="map-buttons">
+          <a class="map-btn" href="nmap://route/car?dlat=35.2262&dlng=128.6813&dname=그랜드머큐어앰배서더창원&appname=wedding" target="_blank">
+            <span class="map-btn-icon naver-icon">N</span>네이버지도
+          </a>
+          <a class="map-btn" href="tmap://route?goalname=그랜드머큐어앰배서더창원&goalx=128.6813&goaly=35.2262" target="_blank">
+            <span class="map-btn-icon tmap-icon">T</span>티맵
+          </a>
+          <a class="map-btn" href="kakaomap://route?ep=35.2262,128.6813&by=CAR" target="_blank">
+            <span class="map-btn-icon kakao-icon">🧭</span>카카오내비
+          </a>
+        </div>
       </div>
       <div class="location-access">
         <div class="access-item">
