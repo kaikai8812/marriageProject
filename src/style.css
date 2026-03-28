@@ -573,7 +573,7 @@ section {
 #footer {
   position: relative;
   min-height: 480px;
-  background: url('./images/main.jpg') center center / cover no-repeat;
+  background: url('./images/footer.png') center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
