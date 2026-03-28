@@ -432,6 +432,7 @@ section {
   font-family: "Pretendard", sans-serif;
   font-size: 0.75rem;
   color: rgb(61, 53, 48);
+  margin-bottom: 40px;
 }
 
 .location-tel a {
