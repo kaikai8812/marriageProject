@@ -469,8 +469,8 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 0.7rem 0;
+  gap: 5px;
+  height: 44px;
   border-radius: 10px;
   background-color: #f7f7f7;
   border: 1px solid #e8e8e8;
@@ -479,11 +479,12 @@ section {
   font-weight: 400;
   text-decoration: none;
   font-family: "NanumGothicCoding", sans-serif;
+  white-space: nowrap;
 }
 
 .map-btn-img {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   object-fit: contain;
   flex-shrink: 0;
 }
