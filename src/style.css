@@ -435,7 +435,7 @@ section {
 
 .location-address {
   font-size: 0.75rem;
-  color: #aaa5a0;
+  color: rgb(61, 53, 48);
   margin-bottom: 0.2rem;
   font-weight: 400;
 }
@@ -448,7 +448,7 @@ section {
 }
 
 .location-tel a {
-  color: #aaa5a0;
+  color: rgb(61, 53, 48);
   text-decoration: none;
 }
   margin-bottom: 1.5rem;
