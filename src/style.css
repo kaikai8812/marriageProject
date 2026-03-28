@@ -159,9 +159,9 @@ section {
   color: #3d3530;
 }
 
-.cover-dot {
-  font-size: 0.6rem;
-  color: #c4b5a5;
+.cover-heart {
+  width: 18px;
+  height: auto;
 }
 
 .cover-date {
