@@ -439,19 +439,51 @@ section {
   margin-bottom: 1.5rem;
 }
 
-.map-placeholder {
+.map-iframe {
   width: 100%;
   aspect-ratio: 4 / 3;
-  background-color: #ede8e2;
   border-radius: 6px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #c4b8aa;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
+  display: block;
 }
+
+.map-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.map-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.6rem 0;
+  border-radius: 8px;
+  background-color: #f5f3f0;
+  font-size: 0.72rem;
+  color: #5a5550;
+  font-weight: 400;
+  text-decoration: none;
+  font-family: "NanumGothicCoding", sans-serif;
+}
+
+.map-btn-icon {
+  font-size: 0.65rem;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.naver-icon { background-color: #03C75A; }
+.tmap-icon  { background-color: #FF4785; }
+.google-icon { background-color: #4285F4; }
 
 .location-access {
   text-align: left;
