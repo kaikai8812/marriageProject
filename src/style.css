@@ -343,7 +343,7 @@ section {
   font-size: 0.75rem;
   color: rgb(61, 53, 48);
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   gap: 0.2rem;
   padding-top: 0.5rem;
