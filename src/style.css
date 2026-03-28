@@ -347,7 +347,7 @@ section {
 
 /* 1日（피로연 당일）をハイライト */
 .cal-days span:nth-child(6) {
-  background-color: #b8d8eb;
+  background-color: #6aaac8;
   color: #fff;
   border-radius: 50%;
   width: 40px;
