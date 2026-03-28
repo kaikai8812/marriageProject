@@ -586,7 +586,7 @@ section {
   top: 0;
   left: 0;
   right: 0;
-  height: 35%;
+  height: 20%;
   background: linear-gradient(to bottom, #faf9f6, transparent);
   z-index: 1;
 }
@@ -597,7 +597,7 @@ section {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 35%;
+  height: 20%;
   background: linear-gradient(to top, #faf9f6, transparent);
   z-index: 1;
 }
