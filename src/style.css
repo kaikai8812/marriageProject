@@ -658,6 +658,7 @@ section {
 .copy-btn {
   font-size: 0.7rem;
   color: #96c0d8;
+  background-color: #fff;
   border: 1px solid #d8eef8;
   padding: 0.35rem 1.2rem;
   border-radius: 3px;
