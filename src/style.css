@@ -63,6 +63,9 @@ button {
 /* ===== 共通パーツ ===== */
 section {
   padding: 2.8rem 1.8rem;
+  position: relative;
+  z-index: 1;
+  background-color: inherit;
 }
 
 .section-eng {
@@ -99,6 +102,9 @@ section {
 #cover {
   padding: 0;
   text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 0;
 }
 
 .cover-photo {
