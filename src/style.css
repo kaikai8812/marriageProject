@@ -290,6 +290,7 @@ section {
   margin-bottom: 1.2rem;
   font-weight: 400;
   line-height: 1.4;
+  letter-spacing: 0;
 }
 
 .mini-calendar {
@@ -322,6 +323,7 @@ section {
 
 .calendar-date-sub {
   font-size: 0.82rem;
+  letter-spacing: 0;
 }
 
 .cal-weekdays span {
