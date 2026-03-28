@@ -230,7 +230,7 @@ section {
 .calendar-date-text {
   font-family: "Pretendard", sans-serif;
   font-size: 1.2rem;
-  color: #7a756f;
+  color: rgb(61, 53, 48);
   margin-bottom: 1.8rem;
   font-weight: 400;
 }
