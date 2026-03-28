@@ -267,6 +267,10 @@ section {
   font-weight: 400;
 }
 
+.cal-weekdays .sun {
+  color: #d4907a;
+}
+
 .cal-days span {
   font-family: "Pretendard", sans-serif;
   font-size: 0.78rem;
