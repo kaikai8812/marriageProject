@@ -572,17 +572,21 @@ section {
 /* ===== フッター ===== */
 #footer {
   position: relative;
-  min-height: 480px;
-  background: url('./images/footer.jpg') center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
+.footer-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 
 .footer-thanks {
-  position: relative;
+  position: absolute;
   z-index: 2;
   font-family: "NanumGothicCoding", sans-serif;
   font-size: 13px;
