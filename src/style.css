@@ -594,7 +594,7 @@ section {
   font-size: 14.5px;
   font-weight: 400;
   color: #738899;
-  letter-spacing: 0.15em;
+  letter-spacing: 0;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
   transform: translateY(-40px);
 }
