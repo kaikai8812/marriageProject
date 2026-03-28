@@ -18,10 +18,10 @@ window.addEventListener('load', function () {
   function createParticle() {
     return {
       x: randomBetween(0, canvas.width),
-      y: randomBetween(-20, -5),
+      y: canvas.height + randomBetween(5, 20),
       size: randomBetween(1.5, 3.5),
-      speedY: randomBetween(0.6, 1.4),
-      speedX: randomBetween(-0.4, 0.4),
+      speedY: randomBetween(-1.4, -0.6),
+      speedX: randomBetween(-1.0, -0.2),
       opacity: randomBetween(0.4, 1),
       isStar: Math.random() > 0.5
     };
@@ -59,7 +59,7 @@ window.addEventListener('load', function () {
       }
       p.y += p.speedY;
       p.x += p.speedX;
-      if (p.y > canvas.height + 10) {
+      if (p.y < -10 || p.x < -10) {
         Object.assign(p, createParticle());
       }
     });
