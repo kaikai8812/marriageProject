@@ -75,14 +75,14 @@ section {
   font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-align: center;
-  color: #7aabcb;
+  color: #96c0d8;
   margin-bottom: 1rem;
 }
 
 .divider-icon {
   text-align: center;
   font-size: 0.7rem;
-  color: #9ec4d9;
+  color: #b8d8eb;
   margin-bottom: 2rem;
   letter-spacing: 0.2em;
 }
@@ -167,7 +167,7 @@ section {
   font-family: "Cormorant Garamond", serif;
   font-size: 0.65rem;
   letter-spacing: 0.15em;
-  color: #7aabcb;
+  color: #96c0d8;
   margin-bottom: 0.9rem;
   font-weight: 600;
   text-align: center;
@@ -241,7 +241,7 @@ section {
   display: block;
   width: 40px;
   height: 1px;
-  background-color: #9ec4d9;
+  background-color: #b8d8eb;
   margin: 1.6rem auto 1.6rem;
 }
 
@@ -285,7 +285,7 @@ section {
 .mini-calendar {
   max-width: 300px;
   margin: 0 auto 1.2rem;
-  border-top: 1px solid #d8ecf7;
+  border-top: 1px solid #e5f3fb;
   padding-top: 1.2rem;
 }
 
@@ -347,7 +347,7 @@ section {
 
 /* 1日（피로연 당일）をハイライト */
 .cal-days span:nth-child(6) {
-  background-color: #9ec4d9;
+  background-color: #b8d8eb;
   color: #fff;
   border-radius: 50%;
   width: 40px;
@@ -365,7 +365,7 @@ section {
   color: rgb(61, 53, 48);
   text-align: center;
   padding-top: 0.5rem;
-  border-top: 1px solid #d8ecf7;
+  border-top: 1px solid #e5f3fb;
   max-width: 300px;
   margin: 0 auto;
   font-weight: 400;
@@ -558,7 +558,7 @@ section {
 .access-label {
   font-size: 0.68rem;
   color: #fff;
-  background-color: #85b5cc;
+  background-color: #a8cfe0;
   padding: 0.15rem 0.5rem;
   border-radius: 2px;
   flex-shrink: 0;
@@ -584,7 +584,7 @@ section {
   justify-content: center;
   gap: 0;
   margin-bottom: 1.5rem;
-  border: 1px solid #c8e2f2;
+  border: 1px solid #d8eef8;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -600,7 +600,7 @@ section {
 }
 
 .account-tab.active {
-  background-color: #9ec4d9;
+  background-color: #b8d8eb;
   color: #fff;
   font-weight: 400;
 }
@@ -644,17 +644,17 @@ section {
 
 .copy-btn {
   font-size: 0.7rem;
-  color: #7aabcb;
-  border: 1px solid #c8e2f2;
+  color: #96c0d8;
+  border: 1px solid #d8eef8;
   padding: 0.35rem 1.2rem;
   border-radius: 3px;
   transition: all 0.2s ease;
 }
 
 .copy-btn:active {
-  background-color: #9ec4d9;
+  background-color: #b8d8eb;
   color: #fff;
-  border-color: #9ec4d9;
+  border-color: #b8d8eb;
 }
 
 /* ===== フッター ===== */
