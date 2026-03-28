@@ -56,7 +56,7 @@ button {
 .wrapper {
   max-width: 430px;
   margin: 0 auto;
-  background-color: #faf9f6;
+  background-color: #f4f9fd;
   min-height: 100vh;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.06);
 }
@@ -75,14 +75,14 @@ section {
   font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-align: center;
-  color: #b0a293;
+  color: #7aabcb;
   margin-bottom: 1rem;
 }
 
 .divider-icon {
   text-align: center;
   font-size: 0.7rem;
-  color: #d4b8a0;
+  color: #9ec4d9;
   margin-bottom: 2rem;
   letter-spacing: 0.2em;
 }
@@ -167,7 +167,7 @@ section {
   font-family: "Cormorant Garamond", serif;
   font-size: 0.65rem;
   letter-spacing: 0.15em;
-  color: #b0a293;
+  color: #7aabcb;
   margin-bottom: 0.9rem;
   font-weight: 600;
   text-align: center;
@@ -241,7 +241,7 @@ section {
   display: block;
   width: 40px;
   height: 1px;
-  background-color: #d4b8a0;
+  background-color: #9ec4d9;
   margin: 1.6rem auto 1.6rem;
 }
 
@@ -285,7 +285,7 @@ section {
 .mini-calendar {
   max-width: 300px;
   margin: 0 auto 1.2rem;
-  border-top: 1px solid #eae5e0;
+  border-top: 1px solid #d8ecf7;
   padding-top: 1.2rem;
 }
 
@@ -347,7 +347,7 @@ section {
 
 /* 1日（피로연 당일）をハイライト */
 .cal-days span:nth-child(6) {
-  background-color: #d4b8a0;
+  background-color: #9ec4d9;
   color: #fff;
   border-radius: 50%;
   width: 40px;
@@ -365,7 +365,7 @@ section {
   color: rgb(61, 53, 48);
   text-align: center;
   padding-top: 0.5rem;
-  border-top: 1px solid #eae5e0;
+  border-top: 1px solid #d8ecf7;
   max-width: 300px;
   margin: 0 auto;
   font-weight: 400;
@@ -558,7 +558,7 @@ section {
 .access-label {
   font-size: 0.68rem;
   color: #fff;
-  background-color: #c4b5a5;
+  background-color: #85b5cc;
   padding: 0.15rem 0.5rem;
   border-radius: 2px;
   flex-shrink: 0;
@@ -584,7 +584,7 @@ section {
   justify-content: center;
   gap: 0;
   margin-bottom: 1.5rem;
-  border: 1px solid #ddd8d2;
+  border: 1px solid #c8e2f2;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -600,7 +600,7 @@ section {
 }
 
 .account-tab.active {
-  background-color: #d4b8a0;
+  background-color: #9ec4d9;
   color: #fff;
   font-weight: 400;
 }
@@ -617,7 +617,7 @@ section {
 
 .account-row {
   padding: 1rem;
-  background-color: #faf8f5;
+  background-color: #f2f8fd;
   border-radius: 6px;
 }
 
@@ -644,17 +644,17 @@ section {
 
 .copy-btn {
   font-size: 0.7rem;
-  color: #b0a293;
-  border: 1px solid #ddd8d2;
+  color: #7aabcb;
+  border: 1px solid #c8e2f2;
   padding: 0.35rem 1.2rem;
   border-radius: 3px;
   transition: all 0.2s ease;
 }
 
 .copy-btn:active {
-  background-color: #d4b8a0;
+  background-color: #9ec4d9;
   color: #fff;
-  border-color: #d4b8a0;
+  border-color: #9ec4d9;
 }
 
 /* ===== フッター ===== */
