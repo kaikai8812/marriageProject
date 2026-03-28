@@ -361,17 +361,15 @@ section {
 }
 
 .countdown-inline {
-  font-size: 0.75rem;
+  font-size: 15px;
   color: rgb(61, 53, 48);
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 0.2rem;
+  text-align: center;
   padding-top: 0.5rem;
   border-top: 1px solid #eae5e0;
   max-width: 300px;
   margin: 0 auto;
   font-weight: 400;
+  white-space: nowrap;
 }
 
 .countdown-inline span {
