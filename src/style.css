@@ -193,7 +193,7 @@ section {
 }
 
 .greeting-body {
-  margin-bottom: 2.5rem;
+  margin-bottom: 0;
 }
 
 .greeting-body p {
@@ -206,7 +206,7 @@ section {
 }
 
 .couple-parents {
-  padding-top: 2rem;
+  padding-top: 1.6rem;
   position: relative;
 }
 
@@ -216,7 +216,7 @@ section {
   width: 40px;
   height: 1px;
   background-color: #d4b8a0;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1.6rem;
 }
 
 .couple-parents p {
