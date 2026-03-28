@@ -6,6 +6,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'ChironGoRound';
+  src: url('./fonts/ChironGoRoundTC-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
 /* ===== 리셋·공통 ===== */
 *,
 *::before,
@@ -22,7 +29,7 @@ html {
 }
 
 body {
-  font-family: "Pretendard", sans-serif;
+  font-family: "ChironGoRound", "Pretendard", sans-serif;
   color: #4a4a4a;
   background-color: #e8e4df;
   font-weight: 400;
