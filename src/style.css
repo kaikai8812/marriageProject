@@ -329,10 +329,12 @@ section {
   border-radius: 50%;
   width: 28px;
   height: 28px;
-  line-height: 28px;
   padding: 0;
   margin: 0 auto;
   font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .countdown-inline {
