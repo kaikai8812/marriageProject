@@ -658,9 +658,9 @@ section {
 
 .copy-btn {
   font-size: 0.7rem;
-  color: #96c0d8;
+  color: rgb(106, 170, 200);
   background-color: #fff;
-  border: 1px solid #d8eef8;
+  border: 1px solid rgb(106, 170, 200);
   padding: 0.35rem 1.2rem;
   border-radius: 3px;
   transition: all 0.2s ease;
