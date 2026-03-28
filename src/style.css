@@ -609,6 +609,12 @@ section {
   display: none;
 }
 
+.account-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
 .account-row {
   padding: 1rem;
   background-color: #faf8f5;
