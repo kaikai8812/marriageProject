@@ -225,7 +225,7 @@ section {
 }
 
 .couple-parents p {
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   color: rgb(170, 165, 160);
   line-height: 2;
   font-weight: 400;
@@ -236,6 +236,7 @@ section {
 }
 
 .couple-parents strong {
+  font-size: 0.8rem;
   font-weight: 400;
   color: #4a4540;
 }
