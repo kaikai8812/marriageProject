@@ -1,5 +1,5 @@
 // ===== 꽃가루 파티클 애니메이션 =====
-(function () {
+window.addEventListener('load', function () {
   var canvas = document.getElementById('particles-canvas');
   if (!canvas) return;
   var ctx = canvas.getContext('2d');
@@ -69,7 +69,7 @@
 
   window.addEventListener('resize', resize);
   animate();
-})();
+});
 
 // ===== 카운트다운 (D-day) =====
 (function () {
