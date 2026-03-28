@@ -231,7 +231,7 @@ section {
   font-family: "Pretendard", sans-serif;
   font-size: 1.2rem;
   color: rgb(61, 53, 48);
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.2rem;
   font-weight: 400;
 }
 
@@ -239,7 +239,7 @@ section {
   max-width: 300px;
   margin: 0 auto 1.8rem;
   border-top: 1px solid #eae5e0;
-  padding-top: 1.5rem;
+  padding-top: 1.2rem;
 }
 
 .cal-header {
