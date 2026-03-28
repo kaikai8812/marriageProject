@@ -161,7 +161,7 @@ section {
   gap: 0.8rem;
   margin-bottom: 0.75rem;
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.12em;
   color: #3d3530;
 }
@@ -183,7 +183,7 @@ section {
   font-size: 0.72rem;
   color: #aaa09a;
   letter-spacing: 0.05em;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 /* ===== 挨拶 ===== */
@@ -198,7 +198,7 @@ section {
 
 .greeting-body p {
   font-size: 0.82rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 2.2;
   color: #5a5550;
   margin-bottom: 1.2rem;
@@ -209,7 +209,7 @@ section {
   font-size: 0.78rem;
   color: #8a8580;
   line-height: 2;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .couple-parents strong {
@@ -231,7 +231,7 @@ section {
   font-size: 0.82rem;
   color: #7a756f;
   margin-bottom: 1.8rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .mini-calendar {
@@ -270,7 +270,7 @@ section {
   font-size: 0.78rem;
   padding: 0.4rem 0;
   color: #5a5550;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .cal-days .sun {
@@ -309,7 +309,7 @@ section {
   border-top: 1px solid #eae5e0;
   max-width: 300px;
   margin: 0 auto;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .countdown-inline strong {
@@ -352,14 +352,14 @@ section {
   font-size: 0.8rem;
   color: #9a958f;
   margin-bottom: 0.8rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .location-address {
   font-size: 0.75rem;
   color: #aaa5a0;
   margin-bottom: 0.2rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .location-tel {
@@ -400,7 +400,7 @@ section {
   gap: 0.8rem;
   font-size: 0.75rem;
   color: #7a756f;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .access-label {
@@ -424,7 +424,7 @@ section {
   color: #8a8580;
   margin-bottom: 1.5rem;
   line-height: 1.9;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .account-tabs {
@@ -444,7 +444,7 @@ section {
   color: #aaa5a0;
   background-color: transparent;
   transition: all 0.3s ease;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .account-tab.active {
@@ -481,7 +481,7 @@ section {
   font-size: 0.78rem;
   color: #7a756f;
   margin-bottom: 0.6rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .copy-btn {
@@ -511,7 +511,7 @@ section {
   color: #7a756f;
   letter-spacing: 0.1em;
   margin-bottom: 0.3rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .footer-date {
