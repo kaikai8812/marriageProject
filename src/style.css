@@ -260,6 +260,10 @@ section {
   margin-bottom: 0.5rem;
 }
 
+.calendar-date-sub {
+  font-size: 0.82rem;
+}
+
 .cal-weekdays span {
   font-size: 0.7rem;
   color: #aaa5a0;
