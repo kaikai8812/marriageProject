@@ -196,6 +196,10 @@ section {
   margin-bottom: 0;
 }
 
+.greeting-body p:last-child {
+  margin-bottom: 0;
+}
+
 .greeting-body p {
   font-size: 0.82rem;
   font-weight: 400;
@@ -206,7 +210,7 @@ section {
 }
 
 .couple-parents {
-  padding-top: 1.6rem;
+  padding-top: 0;
   position: relative;
 }
 
@@ -216,7 +220,7 @@ section {
   width: 40px;
   height: 1px;
   background-color: #d4b8a0;
-  margin: 0 auto 1.6rem;
+  margin: 1.6rem auto 1.6rem;
 }
 
 .couple-parents p {
