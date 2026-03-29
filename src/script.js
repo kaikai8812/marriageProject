@@ -4,7 +4,7 @@ window.addEventListener('load', function () {
   if (!canvas) return;
   var ctx = canvas.getContext('2d');
   var particles = [];
-  var count = 40;
+  var count = 55;
 
   function resize() {
     canvas.width = canvas.offsetWidth;
@@ -19,11 +19,14 @@ window.addEventListener('load', function () {
     return {
       x: randomBetween(0, canvas.width),
       y: canvas.height + randomBetween(5, 20),
-      size: randomBetween(1.5, 3.5),
-      speedY: randomBetween(-1.4, -0.6),
-      speedX: randomBetween(-1.0, -0.2),
-      opacity: randomBetween(0.4, 1),
-      isStar: Math.random() > 0.5
+      size: randomBetween(0.8, 4.5),
+      speedY: randomBetween(-1.6, -0.4),
+      speedX: randomBetween(-0.8, 0.8),
+      opacity: randomBetween(0.3, 1),
+      isStar: Math.random() > 0.45,
+      wobble: randomBetween(0, Math.PI * 2),
+      wobbleSpeed: randomBetween(0.01, 0.04),
+      wobbleAmp: randomBetween(0.2, 0.8)
     };
   }
 
@@ -57,9 +60,10 @@ window.addEventListener('load', function () {
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
       }
+      p.wobble += p.wobbleSpeed;
       p.y += p.speedY;
-      p.x += p.speedX;
-      if (p.y < -10 || p.x < -10) {
+      p.x += p.speedX + Math.sin(p.wobble) * p.wobbleAmp;
+      if (p.y < -10 || p.x < -20 || p.x > canvas.width + 20) {
         Object.assign(p, createParticle());
       }
     });
