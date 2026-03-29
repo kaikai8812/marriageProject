@@ -143,3 +143,29 @@ window.addEventListener('load', function () {
     });
   });
 })();
+
+// ===== 갤러리 라이트박스 =====
+(function () {
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightbox-img');
+  var closeBtn = document.getElementById('lightbox-close');
+
+  document.querySelectorAll('.gallery-item').forEach(function (item) {
+    item.addEventListener('click', function () {
+      var img = item.querySelector('img');
+      if (!img) return;
+      lightboxImg.src = img.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    lightboxImg.src = '';
+  }
+
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function (e) {
+    if (e.target === lightbox) closeLightbox();
+  });
+})();
