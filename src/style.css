@@ -789,14 +789,14 @@ section {
   font-size: 1rem;
   color: #3d3530;
   letter-spacing: 0.05em;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.8rem;
 }
 
 .profile-photo {
   width: 70%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  margin: 0 auto 1.2rem;
+  margin: 0 auto 0.8rem;
 }
 
 .profile-photo img {
