@@ -144,28 +144,67 @@ window.addEventListener('load', function () {
   });
 })();
 
-// ===== 갤러리 라이트박스 =====
+// ===== 갤러리 라이트박스 (스와이프 지원) =====
 (function () {
   var lightbox = document.getElementById('lightbox');
   var lightboxImg = document.getElementById('lightbox-img');
   var closeBtn = document.getElementById('lightbox-close');
+  var currentIndex = 0;
+  var images = [];
+  var touchStartX = 0;
 
-  document.querySelectorAll('.gallery-item').forEach(function (item) {
-    item.addEventListener('click', function () {
-      var img = item.querySelector('img');
-      if (!img) return;
-      lightboxImg.src = img.src;
-      lightbox.classList.add('active');
+  // 이미지가 있는 갤러리 아이템만 수집
+  function buildImageList() {
+    images = [];
+    document.querySelectorAll('.gallery-item img').forEach(function (img) {
+      images.push(img.src);
     });
-  });
+  }
+
+  function openLightbox(index) {
+    buildImageList();
+    if (images.length === 0) return;
+    currentIndex = index;
+    lightboxImg.src = images[currentIndex];
+    lightbox.classList.add('active');
+  }
+
+  function showImage(index) {
+    currentIndex = (index + images.length) % images.length;
+    lightboxImg.src = images[currentIndex];
+  }
 
   function closeLightbox() {
     lightbox.classList.remove('active');
     lightboxImg.src = '';
   }
 
+  // 갤러리 아이템 클릭
+  document.querySelectorAll('.gallery-item').forEach(function (item, i) {
+    item.addEventListener('click', function () {
+      var img = item.querySelector('img');
+      if (!img) return;
+      buildImageList();
+      var idx = images.indexOf(img.src);
+      openLightbox(idx >= 0 ? idx : 0);
+    });
+  });
+
+  // 닫기
   closeBtn.addEventListener('click', closeLightbox);
   lightbox.addEventListener('click', function (e) {
     if (e.target === lightbox) closeLightbox();
   });
+
+  // 스와이프
+  lightbox.addEventListener('touchstart', function (e) {
+    touchStartX = e.touches[0].clientX;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', function (e) {
+    var diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      diff > 0 ? showImage(currentIndex + 1) : showImage(currentIndex - 1);
+    }
+  }, { passive: true });
 })();
