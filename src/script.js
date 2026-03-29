@@ -34,7 +34,6 @@ window.addEventListener('load', function () {
       fadeSpeed: randomBetween(0.003, 0.007),
       opacityMin: cfg.opacityMin,
       opacityMax: cfg.opacityMax,
-      isStar: false,
       glow: cfg.glow,
       blur: cfg.blur,
       wobble: randomBetween(0, Math.PI * 2),
@@ -54,16 +53,6 @@ window.addEventListener('load', function () {
   // 레이어 순으로 정렬 (뒤→앞 순서로 그리기)
   particles.sort(function (a, b) { return a.blur - b.blur; });
 
-  function drawStar(x, y, r) {
-    ctx.beginPath();
-    for (var i = 0; i < 5; i++) {
-      var angle = (i * 4 * Math.PI) / 5 - Math.PI / 2;
-      ctx[i === 0 ? 'moveTo' : 'lineTo'](x + r * Math.cos(angle), y + r * Math.sin(angle));
-    }
-    ctx.closePath();
-    ctx.fill();
-  }
-
   function drawParticle(p) {
     ctx.globalAlpha = p.opacity;
     ctx.fillStyle = '#ffe066';
@@ -71,13 +60,9 @@ window.addEventListener('load', function () {
       ctx.shadowBlur = p.size * 3.5;
       ctx.shadowColor = '#ffd700';
     }
-    if (p.isStar) {
-      drawStar(p.x, p.y, p.size);
-    } else {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fill();
-    }
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fill();
     ctx.shadowBlur = 0;
   }
 
