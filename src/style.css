@@ -420,6 +420,8 @@ section {
 
 .gallery-item {
   cursor: pointer;
+  aspect-ratio: 1;
+  overflow: hidden;
 }
 
 .gallery-item img {
