@@ -640,7 +640,7 @@ section {
 
 /* ===== ご祝儀 ===== */
 #account {
-  background-color: #fff;
+  background-color: #f4f9fd;
   text-align: center;
 }
 
@@ -690,7 +690,7 @@ section {
 
 .account-row {
   padding: 1rem;
-  background-color: #f2f8fd;
+  background-color: #ffffff;
   border-radius: 6px;
 }
 
