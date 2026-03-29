@@ -177,6 +177,7 @@ window.addEventListener('load', function () {
     lightboxImg.src = images[currentIndex];
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
   }
 
   function showImage(index) {
@@ -188,6 +189,7 @@ window.addEventListener('load', function () {
     lightbox.classList.remove('active');
     lightboxImg.src = '';
     document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
   }
 
   // 갤러리 아이템 클릭
