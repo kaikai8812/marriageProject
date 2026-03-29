@@ -1,103 +1,69 @@
-// ===== 꽃가루 파티클 애니메이션 (레이어 깊이감) =====
+// ===== 꽃가루 파티클 애니메이션 =====
 window.addEventListener('load', function () {
   var canvas = document.getElementById('particles-canvas');
   if (!canvas) return;
   var ctx = canvas.getContext('2d');
-
-  function randomBetween(a, b) {
-    return a + Math.random() * (b - a);
-  }
+  var particles = [];
+  var count = 40;
 
   function resize() {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
   }
 
-  // 레이어별 설정: 0=뒤(선명/느림), 1=중간, 2=앞(블러/빠름)
-  var layerConfig = [
-    { count: 12, sizeMin: 0.8, sizeMax: 2.0, speedMin: 0.1, speedMax: 0.25, opacityMin: 0.3,  opacityMax: 0.6,  blur: 0, glow: false },
-    { count: 4,  sizeMin: 2.5, sizeMax: 4.5, speedMin: 0.3, speedMax: 0.5,  opacityMin: 0.45, opacityMax: 0.8,  blur: 3, glow: true  },
-    { count: 3,  sizeMin: 5.0, sizeMax: 9.0, speedMin: 0.6, speedMax: 1.0,  opacityMin: 0.5,  opacityMax: 0.85, blur: 9, glow: true  }
-  ];
+  function randomBetween(a, b) {
+    return a + Math.random() * (b - a);
+  }
 
-  function createParticle(cfg) {
-    var angle = randomBetween(0, Math.PI * 2);
-    var speed = randomBetween(cfg.speedMin, cfg.speedMax);
+  function createParticle() {
     return {
       x: randomBetween(0, canvas.width),
-      y: randomBetween(0, canvas.height),
-      size: randomBetween(cfg.sizeMin, cfg.sizeMax),
-      vx: Math.cos(angle) * speed,
-      vy: Math.sin(angle) * speed,
-      opacity: randomBetween(cfg.opacityMin, cfg.opacityMax),
-      fadeDir: Math.random() > 0.5 ? 1 : -1,
-      fadeSpeed: randomBetween(0.003, 0.007),
-      opacityMin: cfg.opacityMin,
-      opacityMax: cfg.opacityMax,
-      glow: cfg.glow,
-      blur: cfg.blur,
-      wobble: randomBetween(0, Math.PI * 2),
-      wobbleSpeed: randomBetween(0.005, 0.018),
-      wobbleAmp: randomBetween(0.1, 0.4),
-      cfg: cfg
+      y: canvas.height + randomBetween(5, 20),
+      size: randomBetween(1.5, 3.5),
+      speedY: randomBetween(-1.4, -0.6),
+      speedX: randomBetween(-1.0, -0.2),
+      opacity: randomBetween(0.4, 1),
+      isStar: Math.random() > 0.5
     };
   }
 
   resize();
-  var particles = [];
-  layerConfig.forEach(function (cfg) {
-    for (var i = 0; i < cfg.count; i++) {
-      particles.push(createParticle(cfg));
-    }
-  });
-  // 레이어 순으로 정렬 (뒤→앞 순서로 그리기)
-  particles.sort(function (a, b) { return a.blur - b.blur; });
-
-  function drawParticle(p) {
-    ctx.globalAlpha = p.opacity;
-    ctx.fillStyle = '#ffe066';
-    if (p.glow) {
-      ctx.shadowBlur = p.size * 3.5;
-      ctx.shadowColor = '#ffd700';
-    }
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.shadowBlur = 0;
+  for (var i = 0; i < count; i++) {
+    var p = createParticle();
+    p.y = randomBetween(0, canvas.height);
+    particles.push(p);
   }
 
-  var currentBlur = -1;
+  function drawStar(x, y, r) {
+    ctx.beginPath();
+    for (var i = 0; i < 5; i++) {
+      var angle = (i * 4 * Math.PI) / 5 - Math.PI / 2;
+      var method = i === 0 ? 'moveTo' : 'lineTo';
+      ctx[method](x + r * Math.cos(angle), y + r * Math.sin(angle));
+    }
+    ctx.closePath();
+    ctx.fill();
+  }
+
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    currentBlur = -1;
-
     particles.forEach(function (p) {
-      // 블러 변경은 레이어가 바뀔 때만 (성능 최적화)
-      if (p.blur !== currentBlur) {
-        ctx.filter = p.blur > 0 ? 'blur(' + p.blur + 'px)' : 'none';
-        currentBlur = p.blur;
+      ctx.globalAlpha = p.opacity;
+      ctx.fillStyle = '#ffe066';
+      if (p.isStar) {
+        drawStar(p.x, p.y, p.size);
+      } else {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
       }
-
-      drawParticle(p);
-
-      // 페이드 인/아웃
-      p.opacity += p.fadeDir * p.fadeSpeed;
-      if (p.opacity >= p.opacityMax) p.fadeDir = -1;
-      if (p.opacity <= p.opacityMin) p.fadeDir = 1;
-
-      // 이동
-      p.wobble += p.wobbleSpeed;
-      p.x += p.vx + Math.sin(p.wobble) * p.wobbleAmp;
-      p.y += p.vy + Math.cos(p.wobble) * p.wobbleAmp;
-
-      // 화면 밖 → 반대편 재등장
-      if (p.x < -15) p.x = canvas.width + 15;
-      if (p.x > canvas.width + 15) p.x = -15;
-      if (p.y < -15) p.y = canvas.height + 15;
-      if (p.y > canvas.height + 15) p.y = -15;
+      p.y += p.speedY;
+      p.x += p.speedX;
+      if (p.y < -10 || p.x < -10) {
+        Object.assign(p, createParticle());
+      }
     });
 
-    ctx.filter = 'none';
     ctx.globalAlpha = 1;
     requestAnimationFrame(animate);
   }
