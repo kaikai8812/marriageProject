@@ -4,7 +4,7 @@ window.addEventListener('load', function () {
   if (!canvas) return;
   var ctx = canvas.getContext('2d');
   var particles = [];
-  var count = 55;
+  var count = 22;
 
   function resize() {
     canvas.width = canvas.offsetWidth;
@@ -19,14 +19,15 @@ window.addEventListener('load', function () {
     return {
       x: randomBetween(0, canvas.width),
       y: canvas.height + randomBetween(5, 20),
-      size: randomBetween(0.8, 4.5),
-      speedY: randomBetween(-1.6, -0.4),
-      speedX: randomBetween(-0.8, 0.8),
-      opacity: randomBetween(0.3, 1),
-      isStar: Math.random() > 0.45,
+      size: randomBetween(1.5, 8.0),
+      speedY: randomBetween(-0.8, -0.2),
+      speedX: randomBetween(-0.4, 0.4),
+      opacity: randomBetween(0.4, 1),
+      isStar: Math.random() > 0.6,
       wobble: randomBetween(0, Math.PI * 2),
-      wobbleSpeed: randomBetween(0.01, 0.04),
-      wobbleAmp: randomBetween(0.2, 0.8)
+      wobbleSpeed: randomBetween(0.008, 0.025),
+      wobbleAmp: randomBetween(0.3, 1.0),
+      glow: Math.random() > 0.5
     };
   }
 
@@ -53,6 +54,12 @@ window.addEventListener('load', function () {
     particles.forEach(function (p) {
       ctx.globalAlpha = p.opacity;
       ctx.fillStyle = '#ffe066';
+      if (p.glow) {
+        ctx.shadowBlur = p.size * 3;
+        ctx.shadowColor = '#ffe066';
+      } else {
+        ctx.shadowBlur = 0;
+      }
       if (p.isStar) {
         drawStar(p.x, p.y, p.size);
       } else {
@@ -60,6 +67,7 @@ window.addEventListener('load', function () {
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
       }
+      ctx.shadowBlur = 0;
       p.wobble += p.wobbleSpeed;
       p.y += p.speedY;
       p.x += p.speedX + Math.sin(p.wobble) * p.wobbleAmp;
