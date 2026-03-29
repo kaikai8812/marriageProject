@@ -788,6 +788,7 @@ section {
 .profile-person-name {
   font-size: 1rem;
   font-weight: 400;
+  line-height: 32px;
   color: #3d3530;
   letter-spacing: 0.05em;
   margin-bottom: 0.8rem;
