@@ -15,9 +15,9 @@ window.addEventListener('load', function () {
 
   // 레이어별 설정: 0=뒤(선명/느림), 1=중간, 2=앞(블러/빠름)
   var layerConfig = [
-    { count: 8, sizeMin: 0.8, sizeMax: 2.0, speedMin: 0.1, speedMax: 0.25, opacityMin: 0.3,  opacityMax: 0.6,  blur: 0,  glow: false },
-    { count: 7, sizeMin: 2.5, sizeMax: 4.5, speedMin: 0.3, speedMax: 0.5,  opacityMin: 0.45, opacityMax: 0.8,  blur: 3,  glow: true  },
-    { count: 6, sizeMin: 5.0, sizeMax: 9.0, speedMin: 0.6, speedMax: 1.0,  opacityMin: 0.5,  opacityMax: 0.85, blur: 9,  glow: true  }
+    { count: 12, sizeMin: 0.8, sizeMax: 2.0, speedMin: 0.1, speedMax: 0.25, opacityMin: 0.3,  opacityMax: 0.6,  blur: 0, glow: false },
+    { count: 4,  sizeMin: 2.5, sizeMax: 4.5, speedMin: 0.3, speedMax: 0.5,  opacityMin: 0.45, opacityMax: 0.8,  blur: 3, glow: true  },
+    { count: 3,  sizeMin: 5.0, sizeMax: 9.0, speedMin: 0.6, speedMax: 1.0,  opacityMin: 0.5,  opacityMax: 0.85, blur: 9, glow: true  }
   ];
 
   function createParticle(cfg) {
