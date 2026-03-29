@@ -4,7 +4,7 @@ window.addEventListener('load', function () {
   if (!canvas) return;
   var ctx = canvas.getContext('2d');
   var particles = [];
-  var count = 22;
+  var count = 24;
 
   function resize() {
     canvas.width = canvas.offsetWidth;
@@ -15,27 +15,29 @@ window.addEventListener('load', function () {
     return a + Math.random() * (b - a);
   }
 
-  function createParticle() {
+  function createParticle(randomY) {
+    var angle = randomBetween(0, Math.PI * 2);
+    var speed = randomBetween(0.2, 0.7);
     return {
       x: randomBetween(0, canvas.width),
-      y: canvas.height + randomBetween(5, 20),
-      size: randomBetween(1.5, 8.0),
-      speedY: randomBetween(-0.8, -0.2),
-      speedX: randomBetween(-0.4, 0.4),
-      opacity: randomBetween(0.4, 1),
+      y: randomY !== undefined ? randomBetween(0, canvas.height) : randomBetween(0, canvas.height),
+      size: randomBetween(1.5, 7.0),
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+      opacity: randomBetween(0.3, 0.95),
+      fadeDir: Math.random() > 0.5 ? 1 : -1,
+      fadeSpeed: randomBetween(0.003, 0.008),
       isStar: Math.random() > 0.6,
+      glow: Math.random() > 0.4,
       wobble: randomBetween(0, Math.PI * 2),
-      wobbleSpeed: randomBetween(0.008, 0.025),
-      wobbleAmp: randomBetween(0.3, 1.0),
-      glow: Math.random() > 0.5
+      wobbleSpeed: randomBetween(0.005, 0.02),
+      wobbleAmp: randomBetween(0.1, 0.5)
     };
   }
 
   resize();
   for (var i = 0; i < count; i++) {
-    var p = createParticle();
-    p.y = randomBetween(0, canvas.height);
-    particles.push(p);
+    particles.push(createParticle(true));
   }
 
   function drawStar(x, y, r) {
@@ -52,13 +54,16 @@ window.addEventListener('load', function () {
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     particles.forEach(function (p) {
+      // 페이드 인/아웃
+      p.opacity += p.fadeDir * p.fadeSpeed;
+      if (p.opacity >= 0.95) { p.fadeDir = -1; }
+      if (p.opacity <= 0.15) { p.fadeDir = 1; }
+
       ctx.globalAlpha = p.opacity;
       ctx.fillStyle = '#ffe066';
       if (p.glow) {
-        ctx.shadowBlur = p.size * 3;
-        ctx.shadowColor = '#ffe066';
-      } else {
-        ctx.shadowBlur = 0;
+        ctx.shadowBlur = p.size * 4;
+        ctx.shadowColor = '#ffd700';
       }
       if (p.isStar) {
         drawStar(p.x, p.y, p.size);
@@ -68,12 +73,16 @@ window.addEventListener('load', function () {
         ctx.fill();
       }
       ctx.shadowBlur = 0;
+
       p.wobble += p.wobbleSpeed;
-      p.y += p.speedY;
-      p.x += p.speedX + Math.sin(p.wobble) * p.wobbleAmp;
-      if (p.y < -10 || p.x < -20 || p.x > canvas.width + 20) {
-        Object.assign(p, createParticle());
-      }
+      p.x += p.vx + Math.sin(p.wobble) * p.wobbleAmp;
+      p.y += p.vy + Math.cos(p.wobble) * p.wobbleAmp;
+
+      // 화면 밖으로 나가면 반대편에서 재등장
+      if (p.x < -10) p.x = canvas.width + 10;
+      if (p.x > canvas.width + 10) p.x = -10;
+      if (p.y < -10) p.y = canvas.height + 10;
+      if (p.y > canvas.height + 10) p.y = -10;
     });
     ctx.globalAlpha = 1;
     requestAnimationFrame(animate);
