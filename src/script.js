@@ -104,6 +104,15 @@ window.addEventListener('load', function () {
   targets.forEach(function (el) {
     observer.observe(el);
   });
+
+  // 첫 번째 섹션은 페이지 로드 후 자동으로 표시
+  var firstFadeIn = document.querySelector('#greeting .fade-in');
+  if (firstFadeIn) {
+    setTimeout(function () {
+      firstFadeIn.classList.add('visible');
+      observer.unobserve(firstFadeIn);
+    }, 400);
+  }
 })();
 
 // ===== 계좌 탭 전환 =====
