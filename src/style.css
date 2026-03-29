@@ -760,6 +760,10 @@ section {
 }
 
 /* ===== 프로필 섹션 ===== */
+#profile {
+  background-color: #ffffff;
+}
+
 .profile-card {
   text-align: center;
   margin-bottom: 3rem;
@@ -769,11 +773,30 @@ section {
   margin-bottom: 0;
 }
 
+.profile-card .couple-label {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+
+.profile-parents {
+  font-size: 0.75rem;
+  color: #9b9287;
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
+
+.profile-person-name {
+  font-size: 1rem;
+  color: #3d3530;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.2rem;
+}
+
 .profile-photo {
   width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.2rem;
 }
 
 .profile-photo img {
@@ -781,40 +804,6 @@ section {
   height: 100%;
   object-fit: cover;
   object-position: center top;
-}
-
-.profile-role {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 0.75rem;
-  font-weight: 400;
-  letter-spacing: 0.35em;
-  color: #9b8c7e;
-  margin-bottom: 0.6rem;
-}
-
-.profile-name-jp {
-  font-family: "NanumGothicCoding", sans-serif;
-  font-size: 1.15rem;
-  font-weight: 400;
-  color: #3d3530;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.35rem;
-}
-
-.profile-name-kr {
-  font-family: "NanumGothicCoding", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 400;
-  color: #7a6e67;
-  letter-spacing: 0.05em;
-  margin-bottom: 1rem;
-}
-
-.profile-divider {
-  width: 32px;
-  height: 1px;
-  background-color: #c8b8a8;
-  margin: 0 auto 1rem;
 }
 
 .profile-info {
