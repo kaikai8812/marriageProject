@@ -793,10 +793,10 @@ section {
 }
 
 .profile-photo {
-  width: 100%;
+  width: 70%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  margin-bottom: 1.2rem;
+  margin: 0 auto 1.2rem;
 }
 
 .profile-photo img {
