@@ -174,7 +174,6 @@ section {
   font-size: 0.65rem;
   letter-spacing: 0.15em;
   color: #96c0d8;
-  margin-top: 56px;
   margin-bottom: 0.9rem;
   font-weight: 600;
   text-align: center;
@@ -218,7 +217,7 @@ section {
 #greeting {
   text-align: center;
   background-color: #fff;
-  padding-top: 2rem;
+  padding-top: 56px;
 }
 
 .greeting-body {
