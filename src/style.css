@@ -815,6 +815,14 @@ section {
   letter-spacing: 0;
 }
 
+.profile-comment {
+  font-size: 0.75rem;
+  color: #9b9287;
+  margin-top: 1rem;
+  font-style: italic;
+  letter-spacing: 0;
+}
+
 .profile-separator {
   width: 60px;
   height: 1px;
