@@ -343,6 +343,10 @@ section {
   color: #d4907a;
 }
 
+.cal-weekdays .sat {
+  color: #7a9ab5;
+}
+
 .cal-days span {
   font-family: "Pretendard", sans-serif;
   font-size: 0.8rem;
