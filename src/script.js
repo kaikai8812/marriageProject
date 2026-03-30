@@ -19,7 +19,7 @@ window.addEventListener('load', function () {
     return {
       x: randomBetween(0, canvas.width),
       y: canvas.height + randomBetween(5, 20),
-      size: randomBetween(1.5, 4.5),
+      size: randomBetween(1.5, 4.0),
       speedY: randomBetween(-1.4, -0.6),
       speedX: randomBetween(-0.5, 0.5),
       opacity: randomBetween(0.4, 1)
