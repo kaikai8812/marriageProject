@@ -147,6 +147,7 @@ window.addEventListener('load', function () {
   var currentIndex = 0;
   var images = [];
   var touchStartX = 0;
+  var scrollY = 0;
 
   // 이미지가 있는 갤러리 아이템만 수집
   function buildImageList() {
@@ -162,9 +163,11 @@ window.addEventListener('load', function () {
     currentIndex = index;
     lightboxImg.src = images[currentIndex];
     lightbox.classList.add('active');
+    scrollY = window.scrollY;
     document.body.style.overflow = 'hidden';
     document.documentElement.style.overflow = 'hidden';
     document.body.style.position = 'fixed';
+    document.body.style.top = '-' + scrollY + 'px';
     document.body.style.width = '100%';
   }
 
@@ -179,7 +182,9 @@ window.addEventListener('load', function () {
     document.body.style.overflow = '';
     document.documentElement.style.overflow = '';
     document.body.style.position = '';
+    document.body.style.top = '';
     document.body.style.width = '';
+    window.scrollTo(0, scrollY);
   }
 
   // 갤러리 아이템 클릭
