@@ -63,6 +63,7 @@ button {
   background-color: #f4f9fd;
   min-height: 100vh;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
 }
 
 /* ===== 共通パーツ ===== */
@@ -71,6 +72,8 @@ section {
   position: relative;
   z-index: 1;
   background-color: inherit;
+  display: block;
+  margin: 0;
 }
 
 .section-eng {
