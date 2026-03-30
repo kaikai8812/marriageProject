@@ -164,6 +164,8 @@ window.addEventListener('load', function () {
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
     document.documentElement.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
   }
 
   function showImage(index) {
@@ -176,6 +178,8 @@ window.addEventListener('load', function () {
     lightboxImg.src = '';
     document.body.style.overflow = '';
     document.documentElement.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
   }
 
   // 갤러리 아이템 클릭
@@ -194,6 +198,11 @@ window.addEventListener('load', function () {
   lightbox.addEventListener('click', function (e) {
     if (e.target === lightbox) closeLightbox();
   });
+
+  // 라이트박스 열린 동안 배경 스크롤 차단
+  lightbox.addEventListener('touchmove', function (e) {
+    e.preventDefault();
+  }, { passive: false });
 
   // 스와이프
   lightbox.addEventListener('touchstart', function (e) {
