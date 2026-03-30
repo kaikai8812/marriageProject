@@ -32,6 +32,7 @@
         </div>
       </div>
     </section>
+
     <!-- ===== 挨拶 ===== -->
     <section id="greeting">
       <div class="fade-in">
@@ -54,10 +55,6 @@
             축하해 주시면 감사하겠습니다.
           </p>
         </div>
-        <div class="couple-parents">
-          <p><span class="couple-label">신랑</span><br><span class="parent-name">아오야마 코우지·아오야마 마리코</span>의 아들<br><strong>아오야마 카이</strong></p>
-          <p><span class="couple-label">신부</span><br><span class="parent-name">정현모·우영자</span>의 딸<br><strong>정지유</strong></p>
-        </div>
       </div>
     </section>
 
@@ -67,7 +64,7 @@
       <h2 class="section-eng">EVENT DAY</h2>
       <p class="calendar-date-text">2026.05.01<br><span class="calendar-date-sub">금요일 오후 6시 30분</span></p>
       <div class="mini-calendar">
-<div class="cal-weekdays">
+        <div class="cal-weekdays">
           <span class="sun">일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span class="sat">토</span>
         </div>
         <div class="cal-days">
@@ -87,16 +84,47 @@
       </div>
     </section>
 
-    <!-- ===== ギャラリー ===== -->
-    <section id="gallery">
+    <!-- ===== プロフィール ===== -->
+    <section id="profile">
       <div class="fade-in">
-      <h2 class="section-eng">GALLERY</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item"><img src="./images/gallery1.jpg" alt="갤러리 사진 1"></div>
-        <div class="gallery-item"><img src="./images/gallery2.jpg" alt="갤러리 사진 2"></div>
-        <div class="gallery-item"><img src="./images/gallery3.jpg" alt="갤러리 사진 3"></div>
-        <div class="gallery-item"><img src="./images/gallery4.jpg" alt="갤러리 사진 4"></div>
-      </div>
+        <h2 class="section-eng">PROFILE</h2>
+
+        <!-- 신랑 -->
+        <div class="profile-card">
+          <span class="couple-label">신랑</span>
+          <p class="profile-parents"><span class="parent-name">아오야마 코우지·아오야마 마리코</span>의 아들</p>
+          <p class="profile-person-name">아오야마 카이</p>
+          <div class="profile-photo">
+            <img src="./images/profile-groom.jpg" alt="신랑 프로필">
+          </div>
+          <div class="profile-info">
+            <p>생년월일 : 1996년 8월 12일 (29세)</p>
+            <p>출신 : 일본 나고야 🇯🇵</p>
+            <p>직업 : 어플리케이션 개발자</p>
+            <p>취미 : 런닝 / PS게임 / 독서</p>
+          </div>
+          <p class="profile-comment">내가 한국인과 결혼을 하다니..!</p>
+        </div>
+
+        <div class="profile-separator"></div>
+
+        <!-- 신부 -->
+        <div class="profile-card">
+          <span class="couple-label">신부</span>
+          <p class="profile-parents"><span class="parent-name">정현모·우영자</span>의 딸</p>
+          <p class="profile-person-name">정지유</p>
+          <div class="profile-photo">
+            <img src="./images/profile-bride.jpg" alt="신부 프로필">
+          </div>
+          <div class="profile-info">
+            <p>생년월일 : 1995년 5월 31일 (30세)</p>
+            <p>출신 : 대한민국 🇰🇷</p>
+            <p>직업 : UIUX디자이너</p>
+            <p>취미 : 베이킹 / 독서</p>
+          </div>
+          <p class="profile-comment">내가 한국인과 결혼을 하다니..!</p>
+        </div>
+
       </div>
     </section>
 
@@ -137,19 +165,32 @@
       </div>
     </section>
 
+    <!-- ===== ギャラリー ===== -->
+    <section id="gallery">
+      <div class="fade-in">
+      <h2 class="section-eng">GALLERY</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="./images/gallery1.jpg" alt="갤러리 사진 1"></div>
+        <div class="gallery-item"><img src="./images/gallery2.jpg" alt="갤러리 사진 2"></div>
+        <div class="gallery-item"><img src="./images/gallery3.jpg" alt="갤러리 사진 3"></div>
+        <div class="gallery-item"><img src="./images/gallery4.jpg" alt="갤러리 사진 4"></div>
+      </div>
+      </div>
+    </section>
+
     <!-- ===== ご祝儀 ===== -->
-    <section id="account">
+    <section id="account" style="background-color: #f4f9fd;">
       <div class="fade-in">
       <h2 class="section-eng">GIFT</h2>
       <p class="account-desc">참석이 어려우신 분들을 위해<br>계좌번호를 기재하였습니다.<br>너그러운 마음으로 양해 부탁드립니다.</p>
       <div class="account-list">
-        <div class="account-row">
+        <div class="account-row" style="background-color: #ffffff;">
           <p class="account-holder">정현모</p>
           <p class="account-bank">농협</p>
           <p class="account-number">821119-52-265032</p>
           <button class="copy-btn" data-copy="821119-52-265032">복사</button>
         </div>
-        <div class="account-row">
+        <div class="account-row" style="background-color: #ffffff;">
           <p class="account-holder">우영자</p>
           <p class="account-bank">농협</p>
           <p class="account-number">352-1199-3776-93</p>
@@ -161,7 +202,7 @@
 
     <!-- ===== フッター ===== -->
     <footer id="footer">
-      <img src="./images/footer.jpg" class="footer-bg" alt="">
+      <img src="./images/footer2.jpg" class="footer-bg" alt="">
       <p class="footer-thanks">감사합니다</p>
     </footer>
 
