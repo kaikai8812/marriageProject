@@ -825,6 +825,7 @@ section {
   margin-top: 1rem;
   font-style: italic;
   letter-spacing: 0;
+  line-height: 24px;
 }
 
 .profile-separator {
