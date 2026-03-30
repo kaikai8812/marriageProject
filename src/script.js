@@ -21,7 +21,7 @@ window.addEventListener('load', function () {
       y: canvas.height + randomBetween(5, 20),
       size: randomBetween(1.5, 3.5),
       speedY: randomBetween(-1.4, -0.6),
-      speedX: randomBetween(-1.0, -0.2),
+      speedX: randomBetween(-0.5, 0.5),
       opacity: randomBetween(0.4, 1)
     };
   }
