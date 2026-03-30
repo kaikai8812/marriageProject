@@ -29,6 +29,7 @@ html {
   background-color: #fff;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 body {
@@ -41,6 +42,7 @@ body {
   -webkit-font-smoothing: antialiased;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 img {
@@ -485,7 +487,7 @@ section {
 }
 
 .location-name {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   color: #3d3530;
   margin-bottom: 0.2rem;
