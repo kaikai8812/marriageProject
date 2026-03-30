@@ -22,8 +22,7 @@ window.addEventListener('load', function () {
       size: randomBetween(2.5, 5.0),
       speedY: randomBetween(-1.4, -0.6),
       speedX: randomBetween(-1.0, -0.2),
-      opacity: randomBetween(0.4, 1),
-      isStar: Math.random() > 0.5
+      opacity: randomBetween(0.4, 1)
     };
   }
 
@@ -34,29 +33,15 @@ window.addEventListener('load', function () {
     particles.push(p);
   }
 
-  function drawStar(x, y, r) {
-    ctx.beginPath();
-    for (var i = 0; i < 5; i++) {
-      var angle = (i * 4 * Math.PI) / 5 - Math.PI / 2;
-      var method = i === 0 ? 'moveTo' : 'lineTo';
-      ctx[method](x + r * Math.cos(angle), y + r * Math.sin(angle));
-    }
-    ctx.closePath();
-    ctx.fill();
-  }
 
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     particles.forEach(function (p) {
       ctx.globalAlpha = p.opacity;
       ctx.fillStyle = '#ffe066';
-      if (p.isStar) {
-        drawStar(p.x, p.y, p.size);
-      } else {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
       p.y += p.speedY;
       p.x += p.speedX;
       if (p.y < -10 || p.x < -10) {
